@@ -1,0 +1,353 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/steelbrain/node-ssh#readme">node-ssh (v4.2.2)</a>
+</h1>
+<h4>SS2 with Promises</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-ssh">module node-ssh</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.node-ssh">
+            function <span class="apidocSignatureSpan"></span>node-ssh
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-ssh.</span>helpers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-ssh.helpers">module node-ssh.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.helpers.exists">
+            function <span class="apidocSignatureSpan">node-ssh.helpers.</span>exists
+            <span class="apidocSignatureSpan">(filePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.helpers.generateCallback">
+            function <span class="apidocSignatureSpan">node-ssh.helpers.</span>generateCallback
+            <span class="apidocSignatureSpan">(resolve, reject)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.helpers.mkdirSftp">
+            function <span class="apidocSignatureSpan">node-ssh.helpers.</span>mkdirSftp
+            <span class="apidocSignatureSpan">(_x, _x2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.helpers.normalizeConfig">
+            function <span class="apidocSignatureSpan">node-ssh.helpers.</span>normalizeConfig
+            <span class="apidocSignatureSpan">(_x3)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.helpers.normalizePutDirectoryConfig">
+            function <span class="apidocSignatureSpan">node-ssh.helpers.</span>normalizePutDirectoryConfig
+            <span class="apidocSignatureSpan">(givenConfig)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.helpers.readdir">
+            function <span class="apidocSignatureSpan">node-ssh.helpers.</span>readdir
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-ssh.helpers.stat">
+            function <span class="apidocSignatureSpan">node-ssh.helpers.</span>stat
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-ssh" id="apidoc.module.node-ssh">module node-ssh</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.node-ssh" id="apidoc.element.node-ssh.node-ssh">
+        function <span class="apidocSignatureSpan"></span>node-ssh
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SSH() {
+  _classCallCheck(this, SSH);
+
+  this.connection = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-ssh.helpers" id="apidoc.module.node-ssh.helpers">module node-ssh.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.helpers.exists" id="apidoc.element.node-ssh.helpers.exists">
+        function <span class="apidocSignatureSpan">node-ssh.helpers.</span>exists
+        <span class="apidocSignatureSpan">(filePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exists(filePath) {
+  return new Promise(function (resolve) {
+    _fs2.default.access(filePath, _fs2.default.R_OK, function (error) {
+      resolve(!error);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.helpers.generateCallback" id="apidoc.element.node-ssh.helpers.generateCallback">
+        function <span class="apidocSignatureSpan">node-ssh.helpers.</span>generateCallback
+        <span class="apidocSignatureSpan">(resolve, reject)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateCallback(resolve, reject) {
+  return function (error, result) {
+    if (error) {
+      reject(error);
+    } else {
+      resolve(result);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.helpers.mkdirSftp" id="apidoc.element.node-ssh.helpers.mkdirSftp">
+        function <span class="apidocSignatureSpan">node-ssh.helpers.</span>mkdirSftp
+        <span class="apidocSignatureSpan">(_x, _x2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mkdirSftp(_x, _x2) {
+  return _ref.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.helpers.normalizeConfig" id="apidoc.element.node-ssh.helpers.normalizeConfig">
+        function <span class="apidocSignatureSpan">node-ssh.helpers.</span>normalizeConfig
+        <span class="apidocSignatureSpan">(_x3)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalizeConfig(_x3) {
+  return _ref2.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.helpers.normalizePutDirectoryConfig" id="apidoc.element.node-ssh.helpers.normalizePutDirectoryConfig">
+        function <span class="apidocSignatureSpan">node-ssh.helpers.</span>normalizePutDirectoryConfig
+        <span class="apidocSignatureSpan">(givenConfig)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalizePutDirectoryConfig(givenConfig) {
+  var config = Object.assign({}, givenConfig);
+  if (config.tick) {
+    if (typeof config.tick !== 'function') {
+      throw new Error('config.tick must be a function');
+    }
+  } else {
+    config.tick = function () {};
+  }
+  if (config.validate) {
+    if (typeof config.validate !== 'function') {
+      throw new Error('config.validate must be a function');
+    }
+  } else {
+    config.validate = function (path) {
+      return _path2.default.basename(path).substr(0, 1) !== '.';
+    };
+  }
+  config.recursive = {}.hasOwnProperty.call(config, 'recursive') ? !!config.recursive : true;
+  return config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.helpers.readdir" id="apidoc.element.node-ssh.helpers.readdir">
+        function <span class="apidocSignatureSpan">node-ssh.helpers.</span>readdir
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promisified() {
+  var _this = this;
+
+  for (var _len = arguments.length, parameters = Array(_len), _key = 0; _key &lt; _len; _key++) {
+    parameters[_key] = arguments[_key];
+  }
+
+  var promise = new Promise(function (resolve, reject) {
+    parameters.push(function (error, data) {
+      if (error) {
+        reject(error);
+      } else resolve(data);
+    });
+    callback.apply(_this, parameters);
+  });
+  if (!throwError) {
+    promise = promise.then(function (result) {
+      return typeof result === 'undefined' ? true : result;
+    }).catch(function () {
+      return false;
+    });
+  }
+  return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-ssh.helpers.stat" id="apidoc.element.node-ssh.helpers.stat">
+        function <span class="apidocSignatureSpan">node-ssh.helpers.</span>stat
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promisified() {
+  var _this = this;
+
+  for (var _len = arguments.length, parameters = Array(_len), _key = 0; _key &lt; _len; _key++) {
+    parameters[_key] = arguments[_key];
+  }
+
+  var promise = new Promise(function (resolve, reject) {
+    parameters.push(function (error, data) {
+      if (error) {
+        reject(error);
+      } else resolve(data);
+    });
+    callback.apply(_this, parameters);
+  });
+  if (!throwError) {
+    promise = promise.then(function (result) {
+      return typeof result === 'undefined' ? true : result;
+    }).catch(function () {
+      return false;
+    });
+  }
+  return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
